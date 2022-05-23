@@ -1,0 +1,58 @@
+<h3 class="mb-3"><%= pageTitle %></h3>
+
+<form method="post" action="/histories/<%= historiuser.id %>?_method=PUT">
+
+  <div class="mb-3">
+    <label for="id_user" class="form-label">ID User</label>
+    <input
+      type="text"
+      class="form-control"
+      name="id_user"
+      id="id_user"
+      value="<%= historiuser.idgameuser %>"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="nama_game" class="form-label">Nama Permainan</label>
+    <input
+      type="text"
+      class="form-control"
+      name="nama_game"
+      id="nama_game"
+       value="<%= historiuser.nameOfGame %>"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="level" class="form-label">level</label>
+    <input type="text" class="form-control" id="level" name="level"  value="<%= historiuser.level %>"required />
+  </div>
+  <div class="mb-3">
+    <label for="joinDate" class="form-label">Tanggal Bermain</label>
+    <input
+      type="date"
+      class="form-control"
+      id="joinDate"
+      name="joinDate"
+       value="<%= historiuser.joinDate %>"
+      required
+    />
+  </div>
+
+  <div class="row">
+    <div class="col-auto">
+      <button type="button" onclick="history.back()" class="btn btn-danger">
+        Batal
+      </button>
+    </div>
+
+    <div class="col-auto">
+      <button type="reset" class="btn btn-secondary">Reset</button>
+    </div>
+
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>

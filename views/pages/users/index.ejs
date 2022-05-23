@@ -1,0 +1,72 @@
+<% if (alertSuccess.length > 0) { %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <%= alertSuccess %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+
+<div class="d-flex justify-content-between align-items-center">
+  <h3 class="m-0"><%= pageTitle %></h3>
+  <a class="btn btn-primary" href="/gameusers/create" role="button">
+    <i class="bi-plus-lg"></i> Buat Baru
+  </a>
+</div>
+
+<div class="table-responsive mt-3">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr style="text-align: center">
+        <th scope="col">No</th>
+        <th scope="col">Nama User</th>
+        <th scope="col">ID user</th>
+        <th scope="col">Email</th>
+        <th scope="col">No Telepon</th>
+        <th scope="col">Tempat Lahir</th>
+        <th scope="col">Tanggal Lahir</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% gameusers.forEach((gameuser, index)=> { %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td class="w-50"><%= gameuser.name %></td>
+        <td><%= gameuser.id %></td>
+        <td><%= gameuser.email %></td>
+        <td><%= gameuser.phoneNumber %></td>
+        <td class="w-25"><%= gameuser.placeOfBirth %></td>
+        <td class="w-25"><%= gameuser.dateOfBirth %></td>
+        <td>
+          <div class="d-flex gap-2 text-nowrap">
+            <a
+              class="btn btn-success btn-sm"
+              href="/gameusers/<%= gameuser.id %>"
+              role="button"
+            >
+              <i class="bi-eye-fill"></i> Lihat Detail
+            </a>
+
+            <a
+              class="btn btn-primary btn-sm"
+              href="/gameusers/<%= gameuser.id %>/edit"
+              role="button"
+            >
+              <i class="bi-pencil-fill"></i> Edit
+            </a>
+            <form
+              method="post"
+              action="/gameusers/<%= gameuser.id %>?_method=DELETE"
+            >
+              <button class="btn btn-danger btn-sm" type="submit">
+                <i class="bi-trash-fill"></i> Hapus
+              </button>
+            </form>
+          </div>
+        </td>
+      </tr>
+
+      <% }) %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "admin123",
+    "database": "chapter6_ch_development",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "admin123",
+    "database": "chapter6_ch_test",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "admin123",
+    "database": "chapter6_ch_production",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

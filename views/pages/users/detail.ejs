@@ -1,0 +1,45 @@
+<button type="button" onclick="history.back()" class="btn btn-light">
+  <i class="bi-arrow-left"></i>
+  Kembali
+</button>
+
+<h3 class="my-3"><%= pageTitle %></h3>
+
+<div class="table-responsive mt-3">
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th scope="row">Nama User</th>
+        <td><%= gameuser.name %></td>
+      </tr>
+      <tr>
+        <th scope="row">Email</th>
+        <td><%= gameuser.email %></td>
+      </tr>
+      <tr>
+        <th scope="row">No Telepon</th>
+        <td><%= gameuser.phoneNumber %></td>
+      </tr>
+         <tr>
+        <th scope="row">Alamat</th>
+        <td><%= gameuser.address %></td>
+      </tr>
+      <tr>
+        <th scope="row">Tempat Lahir</th>
+        <td><%= gameuser.placeOfBirth %></td></td>
+      </tr>
+      <tr>
+        <th scope="row">Tanggal Lahir</th>
+        <td><%= gameuser.dateOfBirth %></td>
+      </tr>
+      <tr>
+        <th scope="row">Data Dibuat</th>
+        <td><%= gameuser.createdAt %></td>
+      </tr>
+      <tr>
+        <th scope="row">Data Diperbarui</th>
+        <td><%= gameuser.updatedAt %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,55 @@
+<h3 class="mb-3"><%= pageTitle %></h3>
+
+<form method="post" action="/histories">
+  <div class="mb-3">
+    <label for="id_user" class="form-label">Nama User</label>
+    <select class="form-select" aria-label="ID-User" name="id_user" required>
+      <option selected disabled value="">--silahkan pilih</option>
+      <% gamesuser.forEach((data)=>{ %>
+
+      <option value="<%= data.id %>"><%= data.name %></option>
+      <% }) %>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="nama_game" class="form-label">Nama Permainan</label>
+    <input
+      type="text"
+      class="form-control"
+      name="nama_game"
+      id="nama_game"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="level" class="form-label">level</label>
+    <input type="text" class="form-control" id="level" name="level" required />
+  </div>
+  <div class="mb-3">
+    <label for="joinDate" class="form-label">Tanggal Bermain</label>
+    <input
+      type="date"
+      class="form-control"
+      id="joinDate"
+      name="joinDate"
+      required
+    />
+  </div>
+
+  <div class="row">
+    <div class="col-auto">
+      <button type="button" onclick="history.back()" class="btn btn-danger">
+        Batal
+      </button>
+    </div>
+
+    <div class="col-auto">
+      <button type="reset" class="btn btn-secondary">Reset</button>
+    </div>
+
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
